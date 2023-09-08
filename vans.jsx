@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom"
 
 export default function Vans(){
     const [vans, setVans] = React.useState([]);
@@ -11,13 +10,14 @@ export default function Vans(){
 const vanElements = vans.map(van => (
     <div>
         <h3>{van.name}</h3>
+        <p>{van.price}</p>
     </div>
 ))
 
     return (
         <div>
-        <h2>vans here to choose</h2>
-        {vanElements}
+
+            {vanElements}
         </div>
     )
 }
