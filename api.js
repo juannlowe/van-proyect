@@ -58,7 +58,7 @@ export async function getHostVans() {
 /* 
 This 👇 isn't normally something you'd need to do. Instead, you'd 
 set up Firebase security rules so only the currently logged-in user 
-could edit their vans.
+could edit their vans. */
 
 export async function loginUser(creds) {
     const res = await fetch("/api/login",
@@ -75,4 +75,4 @@ export async function loginUser(creds) {
     }
 
     return data
-}*/
+}
