@@ -126,7 +126,7 @@ footer {
     background-size: cover;
     min-height: 350px;
     color: white;
-    padding: 45px 23px;
+    padding: 3rem 6rem;
 }
 
 .home-container h1 {
@@ -214,7 +214,7 @@ footer {
 
 .van-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     gap: 34px;
     margin-top: 57px;
@@ -226,7 +226,8 @@ footer {
 }
 
 .van-tile img {
-    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 3/2;
     border-radius: 5px;
 }
 
