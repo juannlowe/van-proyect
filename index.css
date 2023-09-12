@@ -161,7 +161,9 @@ footer {
 
 /*** ABOUT PAGE ***/
 .about-hero-image {
-    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 3/1;
+    border-radius: 5px;
 }
 
 .about-page-content {

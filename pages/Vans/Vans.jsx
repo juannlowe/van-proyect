@@ -1,6 +1,8 @@
 import React from "react"
-import { Link, useSearchParams } from "react-router-dom"
+import {useSearchParams } from "react-router-dom"
 import { getVans } from "../../api"
+import Van from "./Van"
+
 
 export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams()
@@ -32,20 +34,9 @@ export default function Vans() {
 
     const vanElements = displayedVans.map(van => (
         <div key={van.id} className="van-tile">
-            <Link
-                to={van.id}
-                state={{
-                    search: `?${searchParams.toString()}`,
-                    type: typeFilter
-                }}
-            >
-                <img src={van.imageUrl} />
-                <div className="van-info">
-                    <h3>{van.name}</h3>
-                    <p>${van.price}<span>/day</span></p>
-                </div>
-                <i className={`van-type ${van.type} selected`}>{van.type}</i>
-            </Link>
+            {van && <Van van={van}
+                typeFilter={typeFilter} 
+                searchParams={searchParams}/>}
         </div>
     ))
 
