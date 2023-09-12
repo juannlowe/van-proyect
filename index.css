@@ -34,6 +34,7 @@ header {
     height: 110px;
     display: flex;
     align-items: center;
+    align-content: center;
     padding-block: 10px;
 }
 
@@ -227,6 +228,10 @@ footer {
 .van-tile img {
     max-width: 100%;
     border-radius: 5px;
+}
+
+.img-size{
+    align-items: center;
 }
 
 .van-list-container button {
