@@ -1,32 +1,19 @@
 import React from "react"
-import {useSearchParams } from "react-router-dom"
+import {useLoaderData, useSearchParams } from "react-router-dom"
 import { getVans } from "../../api"
 import Van from "./Van"
 
-
+export function loader() {
+    return getVans()
+}
 export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams()
-    const [vans, setVans] = React.useState([])
     const [loading, setLoading] = React.useState(false)
     const [error, setError] = React.useState(null)
 
+    const vans = useLoaderData()
+
     const typeFilter = searchParams.get("type")
-
-    React.useEffect(() => {
-        async function loadVans() {
-            setLoading(true)
-            try {
-                const data = await getVans()
-                setVans(data)
-            } catch (err) {
-                setError(err)
-            } finally {
-                setLoading(false)
-            }
-        }
-
-        loadVans()
-    }, [])
 
     const displayedVans = typeFilter
         ? vans.filter(van => van.type === typeFilter)
