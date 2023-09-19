@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { 
+    RouterProvider,
+    createBrowserRouter,
+    createRoutesFromElements,
+    Route,
+    Link 
+    } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Vans from "./pages/Vans/Vans"
@@ -20,11 +26,7 @@ import HostLayout from "./components/HostLayout"
 import AuthRequired from "./components/AuthRequired"
 
 import "./server"
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
+const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
@@ -50,9 +52,12 @@ function App() {
           </Route>
 
           <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+      </Route>
+
+))
+function App() {
+  return (
+    <RouterProvider router={router}/>
   )
 }
 
