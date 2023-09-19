@@ -8,7 +8,7 @@ import {
     } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
-import Vans, {loader} from "./pages/Vans/Vans"
+import Vans, {loader as vansLoader} from "./pages/Vans/Vans"
 import VanDetail from "./pages/Vans/VanDetail"
 import Login from "./pages/Login"
 import Dashboard from "./pages/Host/Dashboard"
@@ -34,7 +34,7 @@ const router = createBrowserRouter(createRoutesFromElements(
           path="vans" 
           element={<Vans />} 
           errorElement={<Error />}
-          loader={loader}/>
+          loader={vansLoader}/>
           <Route path="vans/:id" element={<VanDetail />} />
           <Route
             path="login"
