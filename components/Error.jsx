@@ -1,10 +1,13 @@
 import React from "react"
+import { useRouteError } from "react-router-dom"
 
 export default function Error(){
+    const error = useRouteError()
+    console.log(error)
     return (
         <>
-        <h1>An Error Ocurred!</h1>
-        <button>Click here to return to home</button>
+        <h1>Error: {error.message}</h1>
+        <pre>{error.status} - {error.statusText}</pre>
         </>
     )
-}
+    }
